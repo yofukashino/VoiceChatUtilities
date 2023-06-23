@@ -1,16 +1,18 @@
 {
-  "id": "dev.replugged.PluginTemplate",
-  "name": "Plugin Template",
-  "description": "A plugin template",
+  "id": "dev.tharki.VoiceChatUtilities",
+  "name": "VoiceChatUtilities",
+  "description": "Useful voice chat utilities for server administrators.",
+  "image": "https://tharki-god.github.io/files-random-host/bdpluginsassets/voicechatutils.png",
+  "source": "https://github.com/Tharki-God/VoiceChatUtilities",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "Ahlawat",
+    "discordID": "1025214794766221384",
+    "github": "Tharki-God"
   },
   "version": "1.0.0",
   "updater": {
-    "type": "github",
-    "id": "replugged-org/plugin-template"
+    "type": "store",
+    "id": "dev.tharki.VoiceChatUtilities"
   },
   "license": "MIT",
   "type": "replugged-plugin",

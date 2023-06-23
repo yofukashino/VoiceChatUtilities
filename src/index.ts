@@ -1,26 +1,20 @@
-import { Injector, Logger, webpack } from "replugged";
+import { Injector, Logger, settings } from "replugged";
+import { defaultSettings } from "./lib/consts";
+import { registerSettings } from "./Components/Settings";
+export const PluginInjector = new Injector();
+export const { utils: PluginInjectorUtils } = PluginInjector;
+export const PluginLogger = Logger.plugin("VoiceChatUtilities");
+export const SettingValues = await settings.init("dev.tharki.VoiceChatUtilities", defaultSettings);
+import { applyInjections } from "./patches/index";
 
-const inject = new Injector();
-const logger = Logger.plugin("PluginTemplate");
+export const start = (): void => {
+  registerSettings();
+  applyInjections();
+};
 
-export async function start(): Promise<void> {
-  const typingMod = await webpack.waitForModule<{
-    startTyping: (channelId: string) => void;
-  }>(webpack.filters.byProps("startTyping"));
-  const getChannelMod = await webpack.waitForModule<{
-    getChannel: (id: string) => {
-      name: string;
-    };
-  }>(webpack.filters.byProps("getChannel"));
+export const stop = (): void => {
+  PluginInjector.uninjectAll();
+};
 
-  if (typingMod && getChannelMod) {
-    inject.instead(typingMod, "startTyping", ([channel]) => {
-      const channelObj = getChannelMod.getChannel(channel);
-      logger.log(`Typing prevented! Channel: #${channelObj?.name ?? "unknown"} (${channel}).`);
-    });
-  }
-}
 
-export function stop(): void {
-  inject.uninjectAll();
-}
+export { Settings } from "./Components/Settings";
