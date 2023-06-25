@@ -31,7 +31,6 @@ export const getMoveableChannels = ({
           label: "No VC Available",
           id: "no-vc",
           icon: () => Icons.noVC("18", "18"),
-          action: () => Utils.voiceMassActions({ type: "log", user }),
         }}
       />,
     ];
@@ -93,7 +92,6 @@ export const massUtils = ({ channel }: { channel: Types.Channel }): Types.ReactE
       : Utils.getVoiceChannelMembers(channel);
   const guildChannels = GuildChannelStore.getChannels(channel?.guild_id) as Types.GuildChannels;
   const voiceChannels = guildChannels.VOCAL.map(({ channel }) => channel);
-  console.log(channelMembers);
   if (channelMembers?.length <= 1) return null;
   const exceptSelf =
     SettingValues.get("exceptSelf", defaultSettings.exceptSelf) &&
@@ -159,7 +157,6 @@ export const massUtils = ({ channel }: { channel: Types.Channel }): Types.ReactE
         {...{
           id: "move-all-vc",
           label: "Move All",
-          action: () => Utils.voiceMassActions({ type: "log", user }),
         }}>
         {...getMoveableChannels({
           channel,
@@ -338,8 +335,6 @@ export const massUtils = ({ channel }: { channel: Types.Channel }): Types.ReactE
       {...{
         label: "Mass VC Utilities",
         id: "mass-vc-utilities",
-        action: () =>
-          Utils.voiceMassActions({ type: "log", exceptSelf: false, channelMembers, channel, user }),
       }}>
       {...SubMenuItems}
     </MenuItem>

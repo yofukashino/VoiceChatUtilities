@@ -42,10 +42,6 @@ export const voiceMassActions = async ({
   channel?: Types.Channel;
 }): Promise<void> => {
   switch (type) {
-    case "log": {
-      PluginLogger.log(`Teri Mummy Meri Hoja ${user.username}`);
-      break;
-    }
     case "copy": {
       DiscordNative.clipboard.copy(
         SettingValues.get("voicechatcopymentions", defaultSettings.voicechatcopymentions)
