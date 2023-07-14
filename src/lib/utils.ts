@@ -1,5 +1,5 @@
 import { util } from "replugged";
-import { PluginLogger, SettingValues } from "../index";
+import { SettingValues } from "../index";
 import { defaultSettings } from "./consts";
 import {
   APIRequestUtils,
