@@ -10,7 +10,7 @@ Install Link:
 
 [![Install in Replugged](https://img.shields.io/badge/-Install%20in%20Replugged-blue?style=for-the-badge&logo=none)](https://replugged.dev/install?identifier=dev.tharki.VoiceChatUtilities)
 
-![image](https://i.imgur.com/Ui1jK3i.png)
+![vcu](https://i.imgur.com/Ui1jK3i.png)
 
 <sub>Inspired by a Powercord plugin made by [dutake](https://github.com/dutake/voice-chat-utilities).</sub>
 
