@@ -2,17 +2,17 @@
   "id": "dev.tharki.VoiceChatUtilities",
   "name": "VoiceChatUtilities",
   "description": "Useful voice chat utilities for server administrators.",
-  "image": "https://tharki-god.github.io/files-random-host/bdpluginsassets/voicechatutils.png",
+  "image": "https://i.imgur.com/Ui1jK3i.png",
   "source": "https://github.com/Tharki-God/VoiceChatUtilities",
   "author": {
     "name": "Ahlawat",
     "discordID": "1025214794766221384",
     "github": "Tharki-God"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "updater": {
-    "type": "store",
-    "id": "dev.tharki.VoiceChatUtilities"
+    "type": "github",
+    "id": "Tharki-God/VoiceChatUtilities"
   },
   "license": "MIT",
   "type": "replugged-plugin",

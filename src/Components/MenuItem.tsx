@@ -336,7 +336,7 @@ export const massUtils = ({ channel }: { channel: Types.Channel }): Types.ReactE
         label: "Mass VC Utilities",
         id: "mass-vc-utilities",
       }}>
-      {...SubMenuItems}
+      {SubMenuItems}
     </MenuItem>
   );
 };
@@ -347,7 +347,8 @@ export default ({ channel }: { channel: Types.Channel }): Types.ReactElement | n
       {...{
         id: "voice-chat-utilities",
       }}>
-      {...[fastMove({ channel }), massUtils({ channel })]}
+      {fastMove({ channel })}
+      {massUtils({ channel })}
     </MenuGroup>
   );
 };
