@@ -1,22 +1,19 @@
+import { api as APIRequestUtils, channels as UltimateChannelStore } from "replugged/common";
 import { util } from "replugged";
 import { SettingValues } from "../index";
 import { defaultSettings } from "./consts";
-import {
-  APIRequestUtils,
-  DiscordConstants,
-  DiscordNative,
-  SortedVoiceStateStore,
-  UltimateChannelStore,
-} from "./requiredModules";
-import * as Types from "../types";
-export const getVoiceUserIds = (channel): string[] => {
+import { DiscordConstants, SortedVoiceStateStore } from "./requiredModules";
+import Types from "../types";
+
+export const getVoiceUserIds = (channel: Types.Channel): string[] => {
   return (SortedVoiceStateStore.getVoiceStatesForChannel(channel) as Types.VoiceState[]).map(
     (m) => m.user.id,
   );
 };
-export const getVoiceChannelMembers = (channel): string[] => {
+export const getVoiceChannelMembers = (channel: Types.Channel): string[] => {
   return getVoiceUserIds(channel);
 };
+
 export const getVoiceChannel = (): {
   channel: Types.Channel;
   members: string[];
@@ -54,7 +51,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             channel_id: channel.id,
           },
@@ -68,7 +65,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             channel_id: null,
           },
@@ -82,7 +79,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             mute: true,
           },
@@ -96,7 +93,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             mute: false,
           },
@@ -110,7 +107,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             deaf: true,
           },
@@ -124,7 +121,7 @@ export const voiceMassActions = async ({
       for (const member of channelMembers) {
         if (exceptSelf && member === user?.id) continue;
         await APIRequestUtils.patch({
-          url: DiscordConstants.URL.GUILD_MEMBER(channel.guild_id, member) as string,
+          url: DiscordConstants.Endpoints.GUILD_MEMBER(channel.guild_id, member) as string,
           body: {
             deaf: false,
           },
@@ -135,4 +132,12 @@ export const voiceMassActions = async ({
       break;
     }
   }
+};
+
+export default {
+  ...util,
+  getVoiceUserIds,
+  getVoiceChannelMembers,
+  getVoiceChannel,
+  voiceMassActions,
 };

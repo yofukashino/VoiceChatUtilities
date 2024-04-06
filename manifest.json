@@ -3,16 +3,16 @@
   "name": "VoiceChatUtilities",
   "description": "Useful voice chat utilities for server administrators.",
   "image": "https://i.imgur.com/Ui1jK3i.png",
-  "source": "https://github.com/Tharki-God/VoiceChatUtilities",
+  "source": "https://github.com/YofukashiNo/VoiceChatUtilities",
   "author": {
-    "name": "Ahlawat",
-    "discordID": "1025214794766221384",
-    "github": "Tharki-God"
+    "name": "Nanakusa",
+    "discordID": "1121961711080050780",
+    "github": "YofukashiNo"
   },
   "version": "1.0.2",
   "updater": {
     "type": "github",
-    "id": "Tharki-God/VoiceChatUtilities"
+    "id": "YofukashiNo/VoiceChatUtilities"
   },
   "license": "MIT",
   "type": "replugged-plugin",

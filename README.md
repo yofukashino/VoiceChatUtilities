@@ -4,11 +4,11 @@ Some useful tools for server administrators.
 
 Affect everyone in a voice channel with just a click.
 
-Direct Download Link: [dev.tharki.VoiceChatUtilities.asar](https://github.com/Tharki-God/VoiceChatUtilities/releases/latest/download/dev.tharki.VoiceChatUtilities.asar)
+Direct Download Link: [dev.tharki.VoiceChatUtilities.asar](https://github.com/YofukashiNo/VoiceChatUtilities/releases/latest/download/dev.tharki.VoiceChatUtilities.asar)
 
 Install Link:
 
-[![Install in Replugged](https://img.shields.io/badge/-Install%20in%20Replugged-blue?style=for-the-badge&logo=none)](https://replugged.dev/install?identifier=Tharki-God/VoiceChatUtilities&source=github)
+[![Install in Replugged](https://img.shields.io/badge/-Install%20in%20Replugged-blue?style=for-the-badge&logo=none)](https://replugged.dev/install?identifier=YofukashiNo/VoiceChatUtilities&source=github)
 
 ![vcu](https://i.imgur.com/Ui1jK3i.png)
 

@@ -1,174 +1,199 @@
-import * as Types from "../types";
-
-export const fastMove = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const fastMove = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "m15.207 2.292 4 3.995a1 1 0 0 1 .084 1.32l-.083.094-4 4.006a1 1 0 0 1-1.498-1.32l.083-.094L16.083 8H5.5a1 1 0 0 1-.994-.883L4.5 7a1 1 0 0 1 .883-.993L5.5 6h10.59l-2.296-2.293a1 1 0 0 1-.084-1.32l.083-.095a1 1 0 0 1 1.32-.084l.094.084 4 3.995-4-3.995Zm4.283 14.591.007.117a1 1 0 0 1-.883.993l-.117.007H7.913l2.294 2.293a1 1 0 0 1 .084 1.32l-.083.094a1 1 0 0 1-1.32.084l-.095-.084-4-3.996a1 1 0 0 1-.083-1.32l.083-.094 4-4.004a1 1 0 0 1 1.498 1.32l-.083.094L7.918 16h10.579a1 1 0 0 1 .993.883l.007.117-.007-.117Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="m15.207 2.292 4 3.995a1 1 0 0 1 .084 1.32l-.083.094-4 4.006a1 1 0 0 1-1.498-1.32l.083-.094L16.083 8H5.5a1 1 0 0 1-.994-.883L4.5 7a1 1 0 0 1 .883-.993L5.5 6h10.59l-2.296-2.293a1 1 0 0 1-.084-1.32l.083-.095a1 1 0 0 1 1.32-.084l.094.084 4 3.995-4-3.995Zm4.283 14.591.007.117a1 1 0 0 1-.883.993l-.117.007H7.913l2.294 2.293a1 1 0 0 1 .084 1.32l-.083.094a1 1 0 0 1-1.32.084l-.095-.084-4-3.996a1 1 0 0 1-.083-1.32l.083-.094 4-4.004a1 1 0 0 1 1.498 1.32l-.083.094L7.918 16h10.579a1 1 0 0 1 .993.883l.007.117-.007-.117Z"
     />
+    {children}
   </svg>
 );
 
-export const massCopy = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const massCopy = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M16 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM8 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M16 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM8 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"
     />
+    {children}
   </svg>
 );
 
-export const disconnect = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const disconnect = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M21.1169 1.11603L22.8839 2.88403L19.7679 6.00003L22.8839 9.11603L21.1169 10.884L17.9999 7.76803L14.8839 10.884L13.1169 9.11603L16.2329 6.00003L13.1169 2.88403L14.8839 1.11603L17.9999 4.23203L21.1169 1.11603ZM18 22H13C6.925 22 2 17.075 2 11V6C2 5.447 2.448 5 3 5H7C7.553 5 8 5.447 8 6V10C8 10.553 7.553 11 7 11H6C6.063 14.938 9 18 13 18V17C13 16.447 13.447 16 14 16H18C18.553 16 19 16.447 19 17V21C19 21.553 18.553 22 18 22Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M 21.335 10.182 C 16.185 5.033 7.836 5.033 2.687 10.182 C 0.309 12.561 0.649 15.604 2.444 17.399 C 2.699 17.654 3.091 17.713 3.41 17.544 C 3.41 17.544 7.73 15.257 7.73 15.257 C 8.129 15.046 8.317 14.577 8.174 14.149 C 8.174 14.149 7.442 11.954 7.442 11.954 C 10.175 10.002 13.846 10.002 16.579 11.954 C 16.579 11.954 15.815 14.758 15.815 14.758 C 15.693 15.207 15.924 15.677 16.354 15.854 C 16.354 15.854 20.636 17.617 20.636 17.617 C 20.946 17.745 21.303 17.673 21.54 17.436 C 23.332 15.644 23.709 12.556 21.335 10.182 z"
     />
+    {children}
   </svg>
 );
 
-export const mute = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const mute = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M6.7 11H5C5 12.19 5.34 13.3 5.9 14.28L7.13 13.05C6.86 12.43 6.7 11.74 6.7 11Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M12 2a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z"
     />
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M9.01 11.085C9.015 11.1125 9.02 11.14 9.02 11.17L15 5.18V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 11.03 9.005 11.0575 9.01 11.085Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M6 10a1 1 0 0 0-2 0 8 8 0 0 0 7 7.94V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.06A8 8 0 0 0 20 10a1 1 0 1 0-2 0 6 6 0 0 1-12 0Z"
     />
-    <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M11.7237 16.0927L10.9632 16.8531L10.2533 17.5688C10.4978 17.633 10.747 17.6839 11 17.72V22H13V17.72C16.28 17.23 19 14.41 19 11H17.3C17.3 14 14.76 16.1 12 16.1C11.9076 16.1 11.8155 16.0975 11.7237 16.0927Z",
-      }}
-    />
-    <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M21 4.27L19.73 3L3 19.73L4.27 21L8.46 16.82L9.69 15.58L11.35 13.92L14.99 10.28L21 4.27Z",
-      }}
-    />
+    {children}
   </svg>
 );
 
-export const unmute = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const unmute = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M14.99 11C14.99 12.66 13.66 14 12 14C10.34 14 9 12.66 9 11V5C9 3.34 10.34 2 12 2C13.66 2 15 3.34 15 5L14.99 11ZM12 16.1C14.76 16.1 17.3 14 17.3 11H19C19 14.42 16.28 17.24 13 17.72V21H11V17.72C7.72 17.23 5 14.41 5 11H6.7C6.7 14 9.24 16.1 12 16.1ZM12 4C11.2 4 11 4.66667 11 5V11C11 11.3333 11.2 12 12 12C12.8 12 13 11.3333 13 11V5C13 4.66667 12.8 4 12 4Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="m2.7 22.7 20-20a1 1 0 0 0-1.4-1.4l-20 20a1 1 0 1 0 1.4 1.4ZM10.8 17.32c-.21.21-.1.58.2.62V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.06A8 8 0 0 0 20 10a1 1 0 0 0-2 0c0 1.45-.52 2.79-1.38 3.83l-.02.02A5.99 5.99 0 0 1 12.32 16a.52.52 0 0 0-.34.15l-1.18 1.18ZM15.36 4.52c.15-.15.19-.38.08-.56A4 4 0 0 0 8 6v4c0 .3.03.58.1.86.07.34.49.43.74.18l6.52-6.52ZM5.06 13.98c.16.28.53.31.75.09l.75-.75c.16-.16.19-.4.08-.61A5.97 5.97 0 0 1 6 10a1 1 0 0 0-2 0c0 1.45.39 2.81 1.06 3.98Z"
     />
-    <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M14.99 11C14.99 12.66 13.66 14 12 14C10.34 14 9 12.66 9 11V5C9 3.34 10.34 2 12 2C13.66 2 15 3.34 15 5L14.99 11ZM12 16.1C14.76 16.1 17.3 14 17.3 11H19C19 14.42 16.28 17.24 13 17.72V22H11V17.72C7.72 17.23 5 14.41 5 11H6.7C6.7 14 9.24 16.1 12 16.1Z",
-      }}
-    />
+    {children}
   </svg>
 );
 
-export const deaf = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const deaf = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M6.16204 15.0065C6.10859 15.0022 6.05455 15 6 15H4V12C4 7.588 7.589 4 12 4C13.4809 4 14.8691 4.40439 16.0599 5.10859L17.5102 3.65835C15.9292 2.61064 14.0346 2 12 2C6.486 2 2 6.485 2 12V19.1685L6.16204 15.0065Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M12 3a9 9 0 0 0-8.95 10h1.87a5 5 0 0 1 4.1 2.13l1.37 1.97a3.1 3.1 0 0 1-.17 3.78 2.85 2.85 0 0 1-3.55.74 11 11 0 1 1 10.66 0c-1.27.71-2.73.23-3.55-.74a3.1 3.1 0 0 1-.17-3.78l1.38-1.97a5 5 0 0 1 4.1-2.13h1.86A9 9 0 0 0 12 3Z"
     />
-    <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M19.725 9.91686C19.9043 10.5813 20 11.2796 20 12V15H18C16.896 15 16 15.896 16 17V20C16 21.104 16.896 22 18 22H20C21.105 22 22 21.104 22 20V12C22 10.7075 21.7536 9.47149 21.3053 8.33658L19.725 9.91686Z",
-      }}
-    />
-    <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M3.20101 23.6243L1.7868 22.2101L21.5858 2.41113L23 3.82535L3.20101 23.6243Z",
-      }}
-    />
+    {children}
   </svg>
 );
 
-export const undeaf = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const undeaf = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M12 2.00305C6.486 2.00305 2 6.48805 2 12.0031V20.0031C2 21.1071 2.895 22.0031 4 22.0031H6C7.104 22.0031 8 21.1071 8 20.0031V17.0031C8 15.8991 7.104 15.0031 6 15.0031H4V12.0031C4 7.59105 7.589 4.00305 12 4.00305C16.411 4.00305 20 7.59105 20 12.0031V15.0031H18C16.896 15.0031 16 15.8991 16 17.0031V20.0031C16 21.1071 16.896 22.0031 18 22.0031H20C21.104 22.0031 22 21.1071 22 20.0031V12.0031C22 6.48805 17.514 2.00305 12 2.00305Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M22.7 2.7a1 1 0 0 0-1.4-1.4l-20 20a1 1 0 1 0 1.4 1.4l20-20ZM17.06 2.94a.48.48 0 0 0-.11-.77A11 11 0 0 0 2.18 16.94c.14.3.53.35.76.12l3.2-3.2c.25-.25.15-.68-.2-.76a5 5 0 0 0-1.02-.1H3.05a9 9 0 0 1 12.66-9.2c.2.09.44.05.59-.1l.76-.76ZM20.2 8.28a.52.52 0 0 1 .1-.58l.76-.76a.48.48 0 0 1 .77.11 11 11 0 0 1-4.5 14.57c-1.27.71-2.73.23-3.55-.74a3.1 3.1 0 0 1-.17-3.78l1.38-1.97a5 5 0 0 1 4.1-2.13h1.86a9.1 9.1 0 0 0-.75-4.72ZM10.1 17.9c.25-.25.65-.18.74.14a3.1 3.1 0 0 1-.62 2.84 2.85 2.85 0 0 1-3.55.74.16.16 0 0 1-.04-.25l3.48-3.48Z"
     />
+    {children}
   </svg>
 );
 
-export const vc = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const vc = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M11.383 3.07904C11.009 2.92504 10.579 3.01004 10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 14.551 11.002 14 11.002V9.00195Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M12 3a1 1 0 0 0-1-1h-.06a1 1 0 0 0-.74.32L5.92 7H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2.92l4.28 4.68a1 1 0 0 0 .74.32H11a1 1 0 0 0 1-1V3ZM15.1 20.75c-.58.14-1.1-.33-1.1-.92v-.03c0-.5.37-.92.85-1.05a7 7 0 0 0 0-13.5A1.11 1.11 0 0 1 14 4.2v-.03c0-.6.52-1.06 1.1-.92a9 9 0 0 1 0 17.5Z"
     />
+    <path
+      style={{
+        fill: "currentColor",
+      }}
+      d="M15.16 16.51c-.57.28-1.16-.2-1.16-.83v-.14c0-.43.28-.8.63-1.02a3 3 0 0 0 0-5.04c-.35-.23-.63-.6-.63-1.02v-.14c0-.63.59-1.1 1.16-.83a5 5 0 0 1 0 9.02Z"
+    />
+    {children}
   </svg>
 );
 
-export const noVC = (width: number | string, height: number | string): Types.ReactElement => (
-  <svg {...{ viewBox: "0 0 24 24", width, height }}>
+export const noVC = ({
+  children,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { children?: React.ReactNode }): React.ReactElement => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    width={props.width ?? "24"}
+    height={props.height ?? "24"}
+    style={props.style}>
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M15 12C15 12.0007 15 12.0013 15 12.002C15 12.553 14.551 13.002 14 13.002V15.002C15.654 15.002 17 13.657 17 12.002C17 12.0013 17 12.0007 17 12H15ZM19 12C19 12.0007 19 12.0013 19 12.002C19 14.759 16.757 17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 12.0013 21 12.0007 21 12H19ZM10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23204 12 3.59904 12 4.00204V20.002C12 20.407 11.757 20.772 11.383 20.927C11.009 21.082 10.579 20.996 10.293 20.71L6 16.002H3C2.45 16.002 2 15.552 2 15.002V9.00204C2 8.45304 2.45 8.00204 3 8.00204H6L10.293 3.29604Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M16 4h.5v-.5a2.5 2.5 0 0 1 5 0V4h.5a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm4-.5V4h-2v-.5a1 1 0 1 1 2 0Z"
     />
     <path
-      {...{
-        style: {
-          fill: "currentColor",
-        },
-        d: "M21.025 5V4C21.025 2.88 20.05 2 19 2C17.95 2 17 2.88 17 4V5C16.4477 5 16 5.44772 16 6V9C16 9.55228 16.4477 10 17 10H19H21C21.5523 10 22 9.55228 22 9V5.975C22 5.43652 21.5635 5 21.025 5ZM20 5H18V4C18 3.42857 18.4667 3 19 3C19.5333 3 20 3.42857 20 4V5Z",
+      style={{
+        fill: "currentColor",
       }}
+      d="M11 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1h-.06a1 1 0 0 1-.74-.32L5.92 17H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.92l4.28-4.68a1 1 0 0 1 .74-.32H11ZM20.5 12c-.28 0-.5.22-.52.5a7 7 0 0 1-5.13 6.25c-.48.13-.85.55-.85 1.05v.03c0 .6.52 1.06 1.1.92a9 9 0 0 0 6.89-8.25.48.48 0 0 0-.49-.5h-1ZM16.5 12c-.28 0-.5.23-.54.5a3 3 0 0 1-1.33 2.02c-.35.23-.63.6-.63 1.02v.14c0 .63.59 1.1 1.16.83a5 5 0 0 0 2.82-4.01c.02-.28-.2-.5-.48-.5h-1Z"
     />
+    {children}
   </svg>
 );
+
+export default { fastMove, massCopy, disconnect, mute, unmute, deaf, undeaf, vc, noVC };
