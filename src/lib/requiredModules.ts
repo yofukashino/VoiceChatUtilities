@@ -10,3 +10,4 @@ export const SortedVoiceStateStore =
   webpack.getByStoreName<Types.SortedVoiceStateStore>("SortedVoiceStateStore");
 export const GuildChannelStore =
   webpack.getByStoreName<Types.GuildChannelStore>("GuildChannelStore");
+export const APIRequestUtils = webpack.getByProps<Types.APIRequestUtils>("getAPIBaseURL", "HTTP");
