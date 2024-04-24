@@ -1,6 +1,6 @@
 {
   "name": "voice-chat-utilities",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Useful voice chat utilities for server administrators.",
   "engines": {
     "node": ">=14.0.0"
