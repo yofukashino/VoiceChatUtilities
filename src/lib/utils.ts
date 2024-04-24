@@ -2,13 +2,13 @@ import { channels as UltimateChannelStore } from "replugged/common";
 import { util } from "replugged";
 import { SettingValues } from "../index";
 import { defaultSettings } from "./consts";
-import { APIRequestUtils, DiscordConstants, SortedVoiceStateStore } from "./requiredModules";
+import Modules from "./requiredModules";
 import Types from "../types";
 
 export const getVoiceUserIds = (channel: Types.Channel): string[] => {
-  return (SortedVoiceStateStore.getVoiceStatesForChannel(channel) as Types.VoiceState[]).map(
-    (m) => m.user.id,
-  );
+  return (
+    Modules.SortedVoiceStateStore.getVoiceStatesForChannel(channel) as Types.VoiceState[]
+  ).map((m) => m.user.id);
 };
 export const getVoiceChannelMembers = (channel: Types.Channel): string[] => {
   return getVoiceUserIds(channel);
@@ -38,6 +38,7 @@ export const voiceMassActions = async ({
   user?: Types.User;
   channel?: Types.Channel;
 }): Promise<void> => {
+  const { APIRequestUtils, DiscordConstants } = Modules;
   switch (type) {
     case "copy": {
       DiscordNative.clipboard.copy(

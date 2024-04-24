@@ -2,7 +2,7 @@ import { channels as UltimateChannelStore, users as UltimateUserStore } from "re
 import { ContextMenu } from "replugged/components";
 import { SettingValues } from "../index";
 import { defaultSettings } from "../lib/consts";
-import { DiscordConstants, GuildChannelStore, PermissionStore } from "../lib/requiredModules";
+import Modules from "../lib/requiredModules";
 import Icons from "./Icons";
 import Utils from "../lib/utils";
 import Types from "../types";
@@ -14,6 +14,7 @@ export const getMoveableChannels = ({
   user,
   exceptSelf,
 }): React.ReactElement[] => {
+  const { DiscordConstants, PermissionStore } = Modules;
   voiceChannels = voiceChannels.filter(
     (vc) => vc.id !== channel.id && PermissionStore.can(DiscordConstants.Permissions.CONNECT, vc),
   );
@@ -39,6 +40,7 @@ export const getMoveableChannels = ({
   });
 };
 export const fastMove = ({ channel }: { channel: Types.Channel }): React.ReactElement | null => {
+  const { DiscordConstants, PermissionStore } = Modules;
   const user = UltimateUserStore.getCurrentUser();
   const currentChannel = Utils.getVoiceChannel();
   const channelMembers = currentChannel?.members;
@@ -72,6 +74,7 @@ export const fastMove = ({ channel }: { channel: Types.Channel }): React.ReactEl
 };
 export const massUtils = ({ channel }: { channel: Types.Channel }): React.ReactElement | null => {
   if (channel.type !== 2) return null;
+  const { DiscordConstants, GuildChannelStore, PermissionStore } = Modules;
   const SubMenuItems: React.ReactElement[] = [];
   const user = UltimateUserStore.getCurrentUser();
   const currentChannel = Utils.getVoiceChannel();
@@ -309,7 +312,9 @@ export const massUtils = ({ channel }: { channel: Types.Channel }): React.ReactE
   );
 };
 
-export default ({ channel }: { channel: Types.Channel }): React.ReactElement => {
+export default ({
+  channel,
+}: Record<string, unknown> & { channel: Types.Channel }): React.ReactElement => {
   return (
     <MenuGroup className="voice-chat-utilities">
       {fastMove({ channel })}

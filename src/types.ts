@@ -1,9 +1,11 @@
 import { types } from "replugged";
 import { Store } from "replugged/dist/renderer/modules/common/flux";
+import { ContextMenuProps } from "replugged/dist/renderer/modules/components/ContextMenu";
 import GeneralDiscordTypes from "discord-types/general";
 
 export namespace Types {
   export import DefaultTypes = types;
+  export type MenuProps = ContextMenuProps["ContextMenu"];
   export type User = GeneralDiscordTypes.User;
   export type Channel = GeneralDiscordTypes.Channel;
   export type GuildMember = GeneralDiscordTypes.GuildMember;
@@ -815,6 +817,14 @@ export namespace Types {
     getAPIBaseURL: (version?: boolean) => string;
     V6OrEarlierAPIError: typeof V6OrEarlierAPIError;
     V8APIError: typeof APIError;
+  }
+  export interface Modules {
+    loadModules?: () => Promise<void>;
+    DiscordConstants?: DiscordConstants;
+    APIRequestUtils?: APIRequestUtils;
+    PermissionStore?: PermissionStore;
+    SortedVoiceStateStore?: SortedVoiceStateStore;
+    GuildChannelStore?: GuildChannelStore;
   }
   export interface Settings {
     BulkActionsdelay: number;
