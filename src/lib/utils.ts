@@ -1,4 +1,4 @@
-import { channels as UltimateChannelStore } from "replugged/common";
+import { channels as UltimateChannelStore, api as APIRequestUtils } from "replugged/common";
 import { util } from "replugged";
 import { SettingValues } from "../index";
 import { defaultSettings } from "./consts";
@@ -38,7 +38,7 @@ export const voiceMassActions = async ({
   user?: Types.User;
   channel?: Types.Channel;
 }): Promise<void> => {
-  const { APIRequestUtils, DiscordConstants } = Modules;
+  const { DiscordConstants } = Modules;
   switch (type) {
     case "copy": {
       DiscordNative.clipboard.copy(
